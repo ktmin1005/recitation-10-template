@@ -1,4 +1,4 @@
-# CMPS 2200  Recitation 12
+# CMPS 2200  Recitation 10
 
 In this lab we'll investigate graph partitioning. You'll implement the sequential version of edge partitioning, use it to compute the number of components in a graph, then extend it to compute the size of each component in the graph.
 

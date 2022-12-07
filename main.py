@@ -85,10 +85,22 @@ def edge_contract_seq_sizes(vertices, edges, sizes):
     selected_vertices = set()
     vertex_map = {}
     new_vertices = set()
-    for e in edges:
+        for e in edges:
         ### TODO: complete
-        pass
-        
+        if e[1] not in selected_vertices and e[0] not in selected_vertices:
+            selected_vertices.add(e[0])
+            selected_vertices.add(e[1])
+            new_vertices.add(e[1])
+            used_edges.add(e)
+            sizes[e[1]] += 1
+    for v in vertices:
+        if v not in selected_vertices:
+            new_vertices.add(v)
+        sizes[v] += 1
+    for e in used_edges:
+        vertex_map[e[0]] = e[1]
+    for v in new_vertices:
+        vertex_map[v] = v
     return new_vertices, vertex_map, sizes
 
 
